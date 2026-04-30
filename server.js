@@ -26,7 +26,7 @@ function extractBetween(xml, openTag, closeTag) {
   return blocks;
 }
 function buildGetJobsXML() {
-  return `<?xml version="1.0" encoding="utf-8"?><soap:Envelope version="5.0" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetJobs xmlns="http://moraware.com/JobTrackerAPI5"><filter xsi:type="JobFilter"><GetAll>true</GetAll></filter></GetJobs></soap:Body></soap:Envelope>`;
+  return `<?xml version="1.0" encoding="utf-8"?><soap:Envelope version="5" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetJobs xmlns="http://moraware.com/JobTrackerAPI5"><filter xsi:type="JobFilter"><GetAll>true</GetAll></filter></GetJobs></soap:Body></soap:Envelope>`;
 }
 function parseJobs(xml) {
   const jobBlocks = extractBetween(xml, '<Job>', '</Job>');
