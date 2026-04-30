@@ -29,7 +29,7 @@ function getAttr(xml, attr) {
   return m ? m[1] : '';
 }
 async function getSessionId() {
-  const xml = `<?xml version="1.0" encoding="utf-8"?><soap:Envelope version="5" userName="${MORAWARE_USER}" password="${MORAWARE_PASS}" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><Login xmlns="http://moraware.com/JobTrackerAPI5"></Login></soap:Body></soap:Envelope>`;
+  const xml = `<?xml version="1.0" encoding="utf-8"?><soap:Envelope version="5" userName="${MORAWARE_USER}" password="${MORAWARE_PASS}" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><Connect xmlns="http://moraware.com/JobTrackerAPI5"></Connect></soap:Body></soap:Envelope>`;
   const resp = await postXML(xml);
   const m = resp.match(/sessionId="([^"]+)"/);
   if (!m) throw new Error('Login failed: ' + resp.substring(0, 500));
