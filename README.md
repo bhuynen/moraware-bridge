@@ -16,3 +16,4 @@ Connects your client portal to Moraware's API.
 - GET /health — check server is running
 - GET /jobs — all jobs from Moraware
 - GET /jobs/customer@email.com — jobs for a specific customer
+ 
